@@ -30,7 +30,7 @@ jobs:
         uses: redhat-actions/s2i-build@v2
         with:
           path_context: './getting-started'
-          builder_image: quay.io/quarkus/ubi-quarkus-graalvmce-s2i:latest
+          builder_image: registry.access.redhat.com/ubi8/openjdk-17:1.21-1.1751400628
           image: ${{ env.REGISTRY }}/${{ env.IMAGE_REPO }}
           tags: "${{ github.sha }}"
 
