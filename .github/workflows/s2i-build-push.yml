@@ -31,7 +31,7 @@ jobs:
         with:
           path_context: './getting-started'
           builder_image: registry.access.redhat.com/ubi8/openjdk-17:1.21-1.1751400628
-          image: ${{ env.REGISTRY }}/${{ env.IMAGE_REPO }}
+          image: ${{ env.IMAGE_REPO }}
           tags: "${{ github.sha }}"
 
       # Log in to Quay so we can push both tags.
