@@ -49,6 +49,7 @@ jobs:
           sysdig-secure-token: ${{ secrets.SYSDIG_SECURE_TOKEN }}
           image-tag: ${{ env.IMAGE_REPO }}:${{ github.sha }}
           sysdig-secure-url: https://us2.app.sysdig.com
+          stop-on-failed-policy-eval: true
 
       - name: Push image to Quay
         uses: redhat-actions/push-to-registry@v2
