@@ -46,7 +46,7 @@ jobs:
       - name: Sysdig Secure image scan
         uses: sysdiglabs/scan-action@v6
         with:
-          sysdig_secure_token: ${{ secrets.SYSDIG_SECURE_TOKEN }}
+          sysdig-secure-token: ${{ secrets.SYSDIG_SECURE_TOKEN }}
           image-tag: ${{ env.IMAGE_REPO }}:${{ github.sha }}
           sysdig-secure-url: https://us2.app.sysdig.com
 
