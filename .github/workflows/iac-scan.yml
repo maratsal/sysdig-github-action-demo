@@ -23,8 +23,8 @@ jobs:
       - name: Sysdig Secure IaC scan
         uses: sysdiglabs/scan-action@v6
         with:
-          sysdig_secure_token: ${{ secrets.SYSDIG_SECURE_TOKEN }}
-          scan_type: iac
+          sysdig-secure-token: ${{ secrets.SYSDIG_SECURE_TOKEN }}
+          mode: iac
           path: iac-scanning
+          recursive: true
           use-policies: "All Posture Findings"
-
