@@ -31,4 +31,10 @@ jobs:
           mode: iac
           iac-scan-path: iac-scanning
           recursive: true
+          extra-parameters: "--output-json=iac-scan-result.json"
 #          use-policies: "\"All Posture Findings\""
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: iac-scan-result
+          path: iac-scan-result.json
