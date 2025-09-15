@@ -23,6 +23,7 @@ jobs:
       - name: Sysdig Secure IaC scan
         uses: sysdiglabs/scan-action@v6
         with:
+          sysdig-secure-url: https://us2.app.sysdig.com
           sysdig-secure-token: ${{ secrets.SYSDIG_SECURE_TOKEN }}
           mode: iac
           path: iac-scanning
