@@ -1,4 +1,3 @@
-
 name: IaC Scan
 
 # Trigger the workflow on pushes to `main` and pull requests
@@ -26,7 +25,6 @@ jobs:
           pwd
           ls -la
           cd ..
-          ls -la
       # 2. Scan the IaC files in iac-scanning folder with Sysdig Secure
       - name: Sysdig Secure IaC scan
         uses: sysdiglabs/scan-action@v6
@@ -34,6 +32,6 @@ jobs:
           sysdig-secure-url: https://us2.app.sysdig.com
           sysdig-secure-token: ${{ secrets.SYSDIG_SECURE_TOKEN }}
           mode: iac
-          iac-scan-path: iac-scanning
+          iac-scan-path: ../iac-scanning
           recursive: true
 #          use-policies: "\"All Posture Findings\""
