@@ -1,0 +1,26 @@
+name: IaC Scan
+
+# Trigger the workflow on pushes to `main` and pull requests
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Scan the IaC files in iac-scanning folder with Sysdig Secure
+      - name: Sysdig Secure IaC scan
+        uses: sysdiglabs/scan-action@v6
+        with:
+          sysdig_secure_token: ${{ secrets.SYSDIG_SECURE_TOKEN }}
+          scan_type: iac
+          path: iac-scanning
+          use-policies: "All Posture Findings"
+
