@@ -19,7 +19,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Scan the IaC files in iac-scanning folder with Sysdig Secure
+      # 1. Show working directory and list files
+      - name: Show workspace contents
+        run: |
+          pwd
+          ls -la
+      # 2. Scan the IaC files in iac-scanning folder with Sysdig Secure
       - name: Sysdig Secure IaC scan
         uses: sysdiglabs/scan-action@v6
         with:
