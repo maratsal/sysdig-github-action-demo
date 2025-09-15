@@ -26,6 +26,6 @@ jobs:
           sysdig-secure-url: https://us2.app.sysdig.com
           sysdig-secure-token: ${{ secrets.SYSDIG_SECURE_TOKEN }}
           mode: iac
-          path: iac-scanning
+          iac-scan-path: iac-scanning
           recursive: true
 #          use-policies: "\"All Posture Findings\""
