@@ -1,3 +1,4 @@
+
 name: IaC Scan
 
 # Trigger the workflow on pushes to `main` and pull requests
@@ -24,6 +25,7 @@ jobs:
         run: |
           pwd
           ls -la
+          cd ..
       # 2. Scan the IaC files in iac-scanning folder with Sysdig Secure
       - name: Sysdig Secure IaC scan
         uses: sysdiglabs/scan-action@v6
