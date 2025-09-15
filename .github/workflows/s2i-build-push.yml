@@ -3,8 +3,12 @@ name: Build, Push & Scan Quarkus Image
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - 'getting-started/**'
   pull_request:
     branches: [ "main" ]
+    paths:
+      - 'getting-started/**'
 
 permissions:
   contents: read
