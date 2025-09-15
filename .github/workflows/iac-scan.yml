@@ -28,4 +28,4 @@ jobs:
           mode: iac
           path: iac-scanning
           recursive: true
-          use-policies: "All Posture Findings"
+          use-policies: "'All Posture Findings'"
